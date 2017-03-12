@@ -1,0 +1,88 @@
+$text: #37a000;
+$hovered: #008329;
+:host{
+  display: none;
+  width: 100%;
+  max-width: 30em;
+  padding: 2em;
+  border: 2px solid black;
+  background: white;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.modal_title{
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+.input_wrapp{
+  display: flex;
+}
+.input_file_wrapp,
+.modal_button{
+  margin-top: 2em;
+  padding: 1em 1.5em;
+  transition: 0.3s;
+  border: 1px solid black;
+  cursor: pointer;
+  background: white;
+}
+.bad{
+  &:hover{
+    border: 1px solid #b15760;
+    color: #b15760;
+  }
+}
+.good{
+  &:hover{
+    border: 1px solid $text;
+    color: $text;
+  }
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.input_file_wrapp{
+  margin-top: 2em;
+  color: $text;
+  border-color: $text;
+  &:hover{
+    border: 1px solid $hovered;
+    color: $hovered;
+  }
+}
+.file_field{
+  display: none;
+}
+.buttons_wrapp{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.info_wrapp{
+  display: flex;
+  width: 100%;
+  margin-top: 1em;
+}
+.icon-bin2{
+  padding: 0.8em;
+  color: $text;
+  cursor: pointer;
+  &:hover{
+    color: $hovered;
+  }
+}
+.file_name,
+.file_size{
+  flex: 1 0;
+  padding: 0.8em;
+  border: none;
+
+}

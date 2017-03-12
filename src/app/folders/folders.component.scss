@@ -1,0 +1,117 @@
+$text: #37a000;
+$hovered: #008329;
+
+:host{
+  flex-basis: 22em;
+  display: flex;
+  flex-direction: column;
+}
+.top_wrapp{
+  height: 3em;
+  display: flex;
+  align-items: center;
+}
+.new_button{
+  padding: 0.5em 0;
+  cursor: pointer;
+  color: $text;
+  text-transform: uppercase;
+  &:before{
+    padding-right: 1em;
+  }
+  &:hover{
+    color: $hovered;
+  }
+}
+.add_name_wrapp{
+  min-height: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.icon-cross,
+.add_but{
+  padding: 0.5em;
+  cursor: pointer;
+  color: $text;
+  &:hover{
+    color: $hovered;
+  }
+}
+.dir_name_wrapp{
+  flex: 1;
+}
+.name{
+  padding: 0.5em;
+  flex: 1;
+  outline: none;
+}
+.dir_view{
+  margin-top: 2em;
+  flex: auto;
+}
+.dropcontainer{
+  position: relative;
+
+}
+.dir_name_wrapp{
+  display: flex;
+  padding: 0.5em 0;
+}
+.folder,
+.bin{
+  padding: 0.5em;
+  color: $text;
+}
+.bin{
+  cursor: pointer;
+  &:hover{
+    color: $hovered;
+  }
+}
+.dir_name{
+  background: transparent;
+  border: none;
+  outline: none;
+  flex: 1 0;
+  font-size: 1em;
+  padding: 0.5em;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:focus{
+    cursor: text;
+  }
+  &:hover{
+    color: $hovered;
+  }
+}
+.dropdown{
+  font-size: 0.8em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  padding: 0 2em;
+}
+.opened{
+  max-height: 100em;
+  transition: max-height 0.5s ease-in;
+}
+.subdir_add_wrapp{
+  display: flex;
+}
+.subir_name{
+  flex: 1;
+  padding: 0 1.5em;
+  outline: none;
+}
+.subdir_wrapp{
+  margin-top: 1em;
+  display: flex;
+}
+@media screen and (max-width: 768px){
+  :host{
+    flex-basis: auto;
+    width: 100%;
+  }
+}

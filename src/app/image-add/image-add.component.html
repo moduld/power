@@ -1,0 +1,19 @@
+<h3 class="modal_title">Add images</h3>
+<div class="form" >
+    <label class="input_file_wrapp">
+        Add your images
+        <input type="file" id="type_file_input" class="file_field" name="files" (change)="onChange($event)" accept="image/*" multiple>
+    </label>
+
+    <div class="info_wrapp" *ngFor="let image of imagesArr; let i = index">
+        <span class="file_name" contenteditable="true">{{image.name}}</span>
+        <span class="file_size">{{image.size}}</span>
+        <i class="icon-bin2" (click)="deleteImg(i)"></i>
+    </div>
+
+    <div class="buttons_wrapp">
+        <button type="button" class="modal_button bad" (click)="cancelAddImg()">Cancel</button>
+        <button type="button" class="modal_button good" *ngIf="imagesArr?.length" (click)="makeAddFiles()">Add</button>
+    </div>
+
+</div>

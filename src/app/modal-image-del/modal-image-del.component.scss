@@ -1,0 +1,35 @@
+:host{
+    display: none;
+    width: 100%;
+    max-width: 30em;
+    padding: 2em;
+    border: 2px solid black;
+    background: white;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.modal_title{
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+.modal_button{
+    margin-top: 2em;
+    padding: 1em 1.5em;
+    transition: 0.3s;
+    border: 1px solid black;
+}
+.bad{
+&:hover{
+     background: #b15760;
+ }
+}
+.good{
+&:hover{
+     background: #3b803e;
+ }
+}

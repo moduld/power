@@ -1,0 +1,14 @@
+<div class="container" *ngFor="let image of images | sortBy: sortType | paginate: { itemsPerPage: 4, currentPage: p }; let i = index ">
+    <i class="icon-cross" (click)="callDelModal(i)"></i>
+    <div (dblclick)="dblClick(image)">
+        <textarea type="text" class="name"  [(ngModel)]="image.name"
+                  [disabled]="image.disabled" (blur)="saveContent()"></textarea>
+    </div>
+    <div class="img_wrapp" [ngStyle]="{'background-image': 'url(' + image.data + ')'}" (click)="showPopUpWindow(i)">
+    </div>
+    <span class="text">Date: {{image.date | date}}</span>
+    <span class="text">Size: {{image.size}} B</span>
+    <span class="text">{{image.dimension}}</span>
+</div>
+<pagination-controls class="pag_container" (pageChange)="p = $event"></pagination-controls>
+<app-pop-up [image]="clickedImg"  (closePopUp)="closePopUp($event)" *ngIf="showPopUpFlag"></app-pop-up>

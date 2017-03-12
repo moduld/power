@@ -1,0 +1,34 @@
+<div class="top_wrapp">
+    <span class="new_button icon-add" *ngIf="newFolderWindow" (click)="newFolderWindow = false">Add new folder</span>
+    <div class="add_name_wrapp" *ngIf="!newFolderWindow">
+        <i class="icon-cross" (click)="closeNewFolderAdd()"></i>
+        <input type="text" class="name" [(ngModel)]="newFolderName">
+        <i class="add_but icon-ok" (click)="addNewFolder(newFolderName)"></i>
+    </div>
+</div>
+<div class="dir_view">
+    <div class="dropcontainer" *ngFor="let folder of folders; let i = index">
+        <div class="dir_name_wrapp">
+            <i class="folder icon-folder" *ngIf="!folder.opened"></i>
+            <i class="folder icon-folder-open" *ngIf="folder.opened"></i>
+            <span (dblclick)="dblClick(folder)" (click)="oneTimeClick(folder)" [routerLink]="['/folder', i]" class="dir_name_wrapp">
+                 <input type="text" class="dir_name"  [(ngModel)]="folder.name"
+                        [disabled]="folder.disabled" (blur)="saveNewName(folder)">
+            </span>
+
+            <i class="bin icon-bin2" (click)="deleteFolder(folder, i, true)"></i>
+        </div>
+            <div class="dropdown" [ngClass]="{opened: folder.opened}">
+
+                <div class="subdir_add_wrapp">
+                    <input type="text" class="subir_name" placeholder="Add new subdirectory" [(ngModel)]="folder.newSubdir">
+                    <i class="add_but icon-ok" (click)="addNewSubfolder(folder)"></i>
+                </div>
+                <div class="subdir_wrapp" *ngFor="let subfolder of folder.subdir; let j = index">
+                    <i class="folder icon-folder"></i>
+                    <span class="dir_name" [routerLink]="['/folder', i]" [queryParams]="{'subfolder': j}">{{subfolder.name}}</span>
+                    <i class="bin icon-bin2" (click)="deleteFolder(folder, j, false)"></i>
+                </div>
+            </div>
+    </div>
+</div>

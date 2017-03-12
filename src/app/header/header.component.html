@@ -1,0 +1,9 @@
+<div class="search_wrapp">
+    <input type="text" class="search" [(ngModel)]="searchText" (input)="filterBy({'search': searchText})">
+    <i class="do_search icon-search"></i>
+</div>
+<div class="user_wrapp">
+    <span class="addImg" (click)="showAddImgModal()">Add new images</span>
+    <label class="filtering">By date: <input type="radio" name="sort" (click)="filterBy('date')"></label>
+    <label class="filtering">By name: <input type="radio" name="sort" (click)="filterBy('name')"></label>
+</div>

@@ -1,0 +1,52 @@
+$text: #37a000;
+$hovered: #008329;
+
+:host{
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+}
+.search_wrapp{
+  flex-basis: 22em;
+  display: flex;
+  align-items: center;
+}
+.search{
+  padding: 0.8em 2em 0.8em 1.5em;
+  flex: 1;
+  outline: none;
+}
+.do_search{
+  color: $text;
+  transform: translateX(-150%);
+}
+
+.user_wrapp{
+  display: flex;
+  align-items: center;
+}
+.addImg{
+  padding: 0.6em;
+  border: 1px solid $text;
+  background: white;
+  cursor: pointer;
+  &:hover{
+    color: $hovered;
+    border: 1px solid $hovered;
+  }
+}
+.filtering{
+  margin: 0 1em;
+}
+
+@media screen and (max-width: 768px){
+  :host{
+    flex-wrap: wrap;
+  }
+  .search_wrapp{
+    flex-basis: 100%;
+  }
+  .user_wrapp{
+    margin-top: 1.5em;
+  }
+}
